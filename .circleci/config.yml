@@ -6,7 +6,8 @@ jobs:
       - checkout
       - run:
           name: Execute pre-commit on Terraform code
-          command: docker run -v $PWD:/pre-commit --rm guivin/pre-commit-terraform
+          # command: docker run -v $PWD:/pre-commit --rm guivin/pre-commit-terraform
+           command: docker pull nginx
 workflows:
   build:
     jobs:

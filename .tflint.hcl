@@ -39,7 +39,7 @@ rule "terraform_naming_convention" {
   enabled = true
   format  = "none"
 
-  local {
+  locals {
     format = "snake_case"
   }
 }

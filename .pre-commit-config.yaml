@@ -18,6 +18,6 @@ repos:
       - id: terraform_tfsec
       - id: terraform_docs
   - repo: https://github.com/bridgecrewio/checkov.git
-  rev: '' # change to tag or sha
-  hooks:
-    - id: checkov
+    rev: '' # change to tag or sha
+    hooks:
+      - id: checkov

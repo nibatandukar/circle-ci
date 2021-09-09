@@ -1,3 +1,4 @@
+/*
 version: 2.1
 jobs:
   linter:
@@ -8,6 +9,20 @@ jobs:
           name: Execute pre-commit on Terraform code
           # command: docker run -v $PWD:/pre-commit --rm guivin/pre-commit-terraform
           command: docker pull nginx
+workflows:
+  build:
+    jobs:
+      - linter
+*/
+version: 2.1
+jobs:
+  linter:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Execute pre-commit on Terraform code
+          command: docker run -v $PWD:/pre-commit --rm guivin/pre-commit-terraform
 workflows:
   build:
     jobs:
